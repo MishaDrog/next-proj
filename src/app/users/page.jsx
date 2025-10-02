@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Users page| Next JS tutorial',
+  description: 'Users page',
+  keywirds: 'business, next js, react'
+};
+
+
 async function getUsers() {
     const res = await fetch('https://jsonplaceholder.typicode.com/users',{
         cache: 'no-store',

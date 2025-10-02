@@ -1,6 +1,13 @@
 import Image from "next/image";
 
 
+export const metadata = {
+  title: 'About page | Next JS tutorial',
+  description: "Info abiut company",
+  keywirds: 'business, next js, react'
+};
+
+
 const AboutPage = () => {
 
   return (

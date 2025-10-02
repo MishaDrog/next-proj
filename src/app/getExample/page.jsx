@@ -1,16 +1,18 @@
 import ButtonGetRequest from "@/components/ButtonGetRequest";
 
-async function getMessageFromAPI(params) {
-        const  res  = await fetch(`${process.env.NEXT_URL}/api/hello`);
-
-        return res.json();
-}
+import {getHelloMessage} from '@/lib/hello'
 
 
+export const metadata = {
+  title: 'GET Example | Next JS tutorial',
+  description: "GET requests",
+  keywirds: 'business, next js, react'
+};
 
-const GetExample = async () => {
 
-      const {massage} = await getMessageFromAPI()
+const GetExample = () => {
+
+      const {massage} =  getHelloMessage()
 
 
   return (

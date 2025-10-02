@@ -1,44 +1,22 @@
 
 
-async function makePostRequest(params) {
+import {createHelloGreeting} from '@/lib/hello'
 
-  const res = await fetch (`${process.env.NEXT_URL}/api/hello`, {
+export const metadata = {
+  title: 'POST Example | Next JS tutorial',
+  description: "POST requests",
+  keywirds: 'business, next js, react'
+};
 
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
+const PostExample =  () => {
 
-    },
-
-    body: JSON.stringify({name: 'MishaDrog'})
-
-  });
-  
-    const data = await res.json();
-    return data;
-}
-
-
-const PostExample = async () => {
-
-  const {message} = await makePostRequest();
+  const {message} =  createHelloGreeting('Misha_Drog');
 
     return (
               <section className="content">
                   <h2 className="section-title">Post request</h2> 
 
-                  <code>
-                      <pre>
-                        {`const res = await fetch(\`\${process.env.NEXT_URL}/api/hello\`,{
-
-                          method: 'POST',
-                          headers: {'Content-Type': 'application/json'},
-                          body: JSON.stringify({name: 'MishaDrog'}),
-                        
-                        });`}
-                      </pre>
-                  </code>
-
+                  
                   {message && <p>{message}</p> }
               </section>
             );

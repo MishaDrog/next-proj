@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="ua" className={inter.variable}>
       <body>
         <div className="bg-grid"></div>
 

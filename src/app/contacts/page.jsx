@@ -1,3 +1,12 @@
+
+export const metadata = {
+  title: 'Contacts page | Next JS tutorial',
+  description: "Contacts my company",
+  keywirds: 'business, next js, react'
+};
+
+
+
 const ContactsPage = () => {
 
   return (

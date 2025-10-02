@@ -1,16 +1,21 @@
 import { NextResponse } from "next/server";
 
-export async function GET () {
+import {getHelloMessage,createHelloGreeting} from '@/lib/hello'
 
-        return NextResponse.json({massage: 'Hello from API!'});
+
+export async function GET () {
+       const data = getHelloMessage()
+
+        return NextResponse.json(data);
 
 };
 
 export async function POST (req) {
 
-       const data = await req.json();
-        const {name} = data;
+       const {name} = await req.json();
 
-        return NextResponse.json({message:`Hello ${name}, from API! post request`})
+       const greeting = createHelloGreeting(name)
+
+         return NextResponse.json(greeting)
 
 };
